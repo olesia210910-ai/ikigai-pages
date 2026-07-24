@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Афиши — Давлатов 3.09</title>
+<style>
+:root{
+  --bg:#050708; --panel:#0e1213; --gold:#f0a84e; --teal:#3fd8c2;
+  --ink:#f5f1ea; --muted:#a89f92; --hair:rgba(240,168,78,0.22);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  padding:48px 20px 80px;
+}
+.wrap{ max-width:1100px; margin:0 auto; }
+.eyebrow{ font-size:12px; letter-spacing:3px; color:var(--gold); text-transform:uppercase; font-weight:600; }
+h1{ font-size:28px; margin:12px 0 8px; }
+p.lead{ color:var(--muted); font-size:15px; line-height:1.5; max-width:640px; }
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px; margin-top:36px; }
+.card{ background:var(--panel); border:1px solid var(--hair); border-radius:6px; overflow:hidden; }
+.card img{ width:100%; display:block; background:#000; }
+.meta{ padding:16px 18px 20px; }
+.fmt{ font-weight:700; font-size:15px; }
+.dim{ color:var(--muted); font-size:12px; margin-top:2px; }
+.use{ color:var(--teal); font-size:12px; margin-top:6px; }
+a.dl{ display:inline-block; margin-top:12px; font-size:13px; font-weight:600; color:var(--gold); text-decoration:none; border:1px solid var(--hair); padding:8px 14px; border-radius:4px; }
+a.dl:active{ transform:translateY(1px); }
+footer{ margin-top:48px; color:var(--muted); font-size:12px; border-top:1px solid var(--hair); padding-top:18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Икигай · рабочие файлы</div>
+  <h1>Афиши — Саидмурод Давлатов, 3 сентября</h1>
+  <p class="lead">Прямые файлы, без обёртки — открываются и скачиваются как обычная картинка на телефоне и компьютере.</p>
+
+  <div class="grid">
+    <div class="card">
+      <img src="davlatov-square-1080x1080.jpg" alt="Квадрат">
+      <div class="meta">
+        <div class="fmt">Квадрат</div>
+        <div class="dim">2160 × 2160 px</div>
+        <div class="use">Instagram — пост в ленту</div>
+        <a class="dl" href="davlatov-square-1080x1080.jpg" download>Скачать JPG</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="davlatov-stories-1080x1920.jpg" alt="Вертикаль">
+      <div class="meta">
+        <div class="fmt">Вертикаль 9:16</div>
+        <div class="dim">2160 × 3840 px</div>
+        <div class="use">Telegram Stories</div>
+        <a class="dl" href="davlatov-stories-1080x1920.jpg" download>Скачать JPG</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="davlatov-horizontal-1280x720.jpg" alt="Горизонталь">
+      <div class="meta">
+        <div class="fmt">Горизонталь</div>
+        <div class="dim">2560 × 1440 px</div>
+        <div class="use">TimePad — обложка события</div>
+        <a class="dl" href="davlatov-horizontal-1280x720.jpg" download>Скачать JPG</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>Икигай · Сообщество своих — рабочие материалы, не для публичного распространения без согласования.</footer>
+</div>
+</body>
+</html>
