@@ -277,7 +277,7 @@ section.calendar{background:var(--bg);padding-top:0;padding-bottom:clamp(60px,6v
 
 /* FLOATING CTA */
 .float-cta{position:fixed;right:20px;bottom:20px;z-index:90;display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:var(--r-pill);font-family:var(--sans);font-size:14px;font-weight:600;color:var(--text-60);background:rgba(255,255,255,.06);border:1px solid var(--line);text-decoration:none;cursor:not-allowed;transition:opacity .3s;opacity:0;pointer-events:none;transform:translateY(8px);}
-.float-cta.visible{opacity:1;transform:translateY(0);}
+.float-cta.visible{opacity:1;transform:translateY(0);pointer-events:auto;cursor:pointer;}
 @media (max-width:480px){.float-cta{right:14px;bottom:14px;padding:12px 18px;font-size:13px;}}
 
 /* FINAL */
@@ -317,7 +317,7 @@ footer{padding:36px var(--pad-x);border-top:1px solid var(--line);background:var
         <span class="nav-partner-label">Партнёр сообщества</span>
       </span>
     </div>
-    <span class="nav-cta" style="pointer-events:none;">Регистрация скоро</span>
+    <a href="https://ikigay-ce.timepad.ru/event/4112876/" target="_blank" rel="noopener" class="nav-cta">Регистрация</a>
   </div>
 </nav>
 
@@ -351,11 +351,11 @@ footer{padding:36px var(--pad-x);border-top:1px solid var(--line);background:var
         <div class="hero-meta-item"><span>▲</span> <b>SOK Рыбаков Тауэр</b></div>
       </div>
       <div class="hero-actions">
-        <a href="#" class="btn btn-grad btn-arrow btn-disabled">Забронировать место</a>
+        <a href="https://ikigay-ce.timepad.ru/event/4112876/" target="_blank" rel="noopener" class="btn btn-grad btn-arrow">Забронировать место</a>
         <a href="#calendar-block" class="btn btn-ghost">+ В календарь</a>
         <a href="#speaker" class="btn btn-ghost">О спикере</a>
       </div>
-      <div class="hero-foot">Регистрация: <span>скоро откроется на Timepad</span></div>
+      <div class="hero-foot">Регистрация: <span>на Timepad</span></div>
     </div>
     <div class="hero-visual reveal">
       <div class="hero-photo-wrap">
@@ -484,7 +484,7 @@ footer{padding:36px var(--pad-x);border-top:1px solid var(--line);background:var
       <b>Мест ограниченное количество.</b>
       <span>◆ 3 сентября · 18:30 · SOK Рыбаков Тауэр</span>
     </div>
-    <a href="#" class="btn btn-grad btn-arrow btn-disabled">Забронировать место</a>
+    <a href="https://ikigay-ce.timepad.ru/event/4112876/" target="_blank" rel="noopener" class="btn btn-grad btn-arrow">Забронировать место</a>
   </div>
 </div>
 
@@ -604,14 +604,13 @@ footer{padding:36px var(--pad-x);border-top:1px solid var(--line);background:var
     <div class="register-card reveal">
       <span class="eyebrow"><span class="dot"></span>Регистрация</span>
       <h2 class="h2">Готов <em>построить систему</em>?</h2>
-      <p class="lead">Билеты откроются на Timepad. Мест — ограниченное количество.</p>
+      <p class="lead">Билеты — на Timepad. Мест — ограниченное количество.</p>
       <div class="register-meta">
         <div class="register-meta-item">◆ 3 СЕНТЯБРЯ · ЧЕТВЕРГ</div>
         <div class="register-meta-item">○ <b>18:30</b></div>
         <div class="register-meta-item">▲ SOK РЫБАКОВ ТАУЭР</div>
       </div>
-      <a href="#" class="btn btn-grad btn-arrow btn-disabled" style="font-size:17px;padding:18px 36px;">Забронировать место на Timepad</a>
-      <div class="cta-note">Ссылка появится, как только событие будет заведено</div>
+      <a href="https://ikigay-ce.timepad.ru/event/4112876/" target="_blank" rel="noopener" class="btn btn-grad btn-arrow" style="font-size:17px;padding:18px 36px;">Забронировать место на Timepad</a>
     </div>
   </div>
 </section>
@@ -622,7 +621,7 @@ footer{padding:36px var(--pad-x);border-top:1px solid var(--line);background:var
     <h2 class="h2" style="margin-top:18px;">Кризис — не финал истории. Финал — это <em>система</em>, которая выводит из него.</h2>
     <p class="lead">3 сентября, четверг, 18:30. SOK Рыбаков Тауэр.</p>
     <div class="final-actions">
-      <a href="#" class="btn btn-grad btn-arrow btn-disabled">Забронировать место</a>
+      <a href="https://ikigay-ce.timepad.ru/event/4112876/" target="_blank" rel="noopener" class="btn btn-grad btn-arrow">Забронировать место</a>
       <a href="https://ikigai-community.com/" target="_blank" rel="noopener" class="btn btn-ghost">Сообщество Икигай</a>
     </div>
   </div>
@@ -643,7 +642,7 @@ footer{padding:36px var(--pad-x);border-top:1px solid var(--line);background:var
   </div>
 </section>
 
-<a href="#" class="float-cta" id="floatCta">Регистрация скоро откроется</a>
+<a href="https://ikigay-ce.timepad.ru/event/4112876/" target="_blank" rel="noopener" class="float-cta" id="floatCta">Регистрация на Timepad</a>
 
 <footer>
   <div class="foot-inner">
