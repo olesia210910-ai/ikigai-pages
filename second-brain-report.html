@@ -211,20 +211,28 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 @media (max-width: 1100px) { .ikigai-hero { width: min(60vw, 360px); height: min(60vw, 360px); top: auto; bottom: -10%; right: -10%; transform: none; } }
 .deck > .slide:nth-of-type(1) .slide-inner { max-width: 900px; margin-left: 0; margin-right: auto; }
 @media (max-width: 1100px) { .deck > .slide:nth-of-type(1) .slide-inner { max-width: 90vw; margin: 0; } }
-.ikigai-hero .petal { stroke-width: 3; transform-box: fill-box; transform-origin: center; }
+.ikigai-hero .petal { transform-box: fill-box; transform-origin: center; }
 .ikigai-hero .p1 { animation: conv-p1 10s ease-in-out infinite; }
 .ikigai-hero .p2 { animation: conv-p2 10s ease-in-out infinite; }
 .ikigai-hero .p3 { animation: conv-p3 10s ease-in-out infinite; }
 .ikigai-hero .p4 { animation: conv-p4 10s ease-in-out infinite; }
 .ikigai-hero .core { animation: core-glow 10s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.ikigai-hero .center-reveal { opacity: 0; animation: center-reveal 10s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
 @media (prefers-reduced-motion: reduce) {
-  .ikigai-hero .p1, .ikigai-hero .p2, .ikigai-hero .p3, .ikigai-hero .p4, .ikigai-hero .core { animation: none; }
+  .ikigai-hero .p1, .ikigai-hero .p2, .ikigai-hero .p3, .ikigai-hero .p4, .ikigai-hero .core, .ikigai-hero .center-reveal { animation: none; }
 }
-@keyframes conv-p1 { 0%,100% { transform: translate(0,0) scale(1); filter: brightness(1); } 50% { transform: translate(42px,42px) scale(1.1); filter: brightness(1.5); } }
-@keyframes conv-p2 { 0%,100% { transform: translate(0,0) scale(1); filter: brightness(1); } 50% { transform: translate(-42px,42px) scale(1.1); filter: brightness(1.5); } }
-@keyframes conv-p3 { 0%,100% { transform: translate(0,0) scale(1); filter: brightness(1); } 50% { transform: translate(42px,-42px) scale(1.1); filter: brightness(1.5); } }
-@keyframes conv-p4 { 0%,100% { transform: translate(0,0) scale(1); filter: brightness(1); } 50% { transform: translate(-42px,-42px) scale(1.1); filter: brightness(1.5); } }
-@keyframes core-glow { 0%,100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 1; transform: scale(2.4); } }
+@keyframes conv-p1 { 0%,100% { transform: translate(0,0) scale(1); opacity: 0.45; } 50% { transform: translate(42px,42px) scale(1.1); opacity: 1; } }
+@keyframes conv-p2 { 0%,100% { transform: translate(0,0) scale(1); opacity: 0.45; } 50% { transform: translate(-42px,42px) scale(1.1); opacity: 1; } }
+@keyframes conv-p3 { 0%,100% { transform: translate(0,0) scale(1); opacity: 0.45; } 50% { transform: translate(42px,-42px) scale(1.1); opacity: 1; } }
+@keyframes conv-p4 { 0%,100% { transform: translate(0,0) scale(1); opacity: 0.45; } 50% { transform: translate(-42px,-42px) scale(1.1); opacity: 1; } }
+@keyframes core-glow { 0%,100% { opacity: 0; transform: scale(1); } 46%,54% { opacity: 0; } 50% { opacity: 1; transform: scale(1); } }
+@keyframes center-reveal {
+  0%, 42%, 100% { opacity: 0; transform: scale(0.6); }
+  47% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0; transform: scale(1); }
+  53% { opacity: 1; transform: scale(1); }
+  58% { opacity: 0; transform: scale(0.6); }
+}
 
 /* --- Nav bar --- */
 .nav-bar {
@@ -277,11 +285,21 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 <div class="deck" id="deck">
 
 <div class="slide" data-crumb="Обложка">
-    <svg class="ikigai-hero" viewBox="0 0 200 200" aria-hidden="true">
-      <circle cx="40" cy="40" r="65" fill="none" stroke="#4ADE80" stroke-width="1.4" class="petal p1"/>
-      <circle cx="160" cy="40" r="65" fill="none" stroke="#22D3EE" stroke-width="1.4" class="petal p2"/>
-      <circle cx="40" cy="160" r="65" fill="none" stroke="#A78BFA" stroke-width="1.4" class="petal p3"/>
-      <circle cx="160" cy="160" r="65" fill="none" stroke="#F0B429" stroke-width="1.4" class="petal p4"/>
+    <svg class="ikigai-hero" viewBox="-40 -40 280 280" aria-hidden="true">
+      <defs>
+        <radialGradient id="rainbowGrad" cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stop-color="#4ADE80"/>
+          <stop offset="35%" stop-color="#22D3EE"/>
+          <stop offset="68%" stop-color="#A78BFA"/>
+          <stop offset="100%" stop-color="#F0B429"/>
+        </radialGradient>
+      </defs>
+      <circle cx="40" cy="40" r="65" fill="none" stroke="#4ADE80" stroke-width="3" class="petal p1"/>
+      <circle cx="160" cy="40" r="65" fill="none" stroke="#22D3EE" stroke-width="3" class="petal p2"/>
+      <circle cx="40" cy="160" r="65" fill="none" stroke="#A78BFA" stroke-width="3" class="petal p3"/>
+      <circle cx="160" cy="160" r="65" fill="none" stroke="#F0B429" stroke-width="3" class="petal p4"/>
+      <circle cx="100" cy="100" r="34" fill="url(#rainbowGrad)" class="center-reveal"/>
+      <text x="100" y="103" text-anchor="middle" font-family="Unbounded, sans-serif" font-size="12" font-weight="900" fill="#06110A" class="center-reveal">IKIGAI</text>
       <circle cx="100" cy="100" r="3" fill="#E7EAEE" class="core"/>
     </svg>
   <div class="slide-inner">
@@ -289,7 +307,7 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
     <h1 class="cover-title"><span class="cover-title-small gradient-text">«Второй мозг» и «Наш этаж»</span><span class="cover-title-big">— что построено?</span></h1>
     <p class="lede">Вы попросили показать, что Олеся построила в своём <span class="hl-green" style="font-style:italic">Втором мозге</span> и какие решения уже применены.</p>
     <p class="lede">Дальше — то, что <span class="hl-green">реально сделано</span>: шаг за шагом, команда, которую собрала Олеся, и инструменты, которые созданы.</p>
-    <div style="margin-top:28px; color:var(--fg-faint); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em;">13 слайдов · Второй мозг · Наш этаж · Икигай</div>
+    <div style="margin-top:28px; color:var(--fg-faint); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em;">Второй мозг · Наш этаж · Икигай</div>
   </div>
 </div>
 
@@ -308,7 +326,8 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 <div class="slide" data-crumb="Маршрут">
   <div class="slide-inner">
     <div class="eyebrow" style="--dot:var(--accent-teal)">Маршрут</div>
-    <h2>О чём эти тринадцать слайдов</h2>
+    <h2>О чём эта презентация</h2>
+    <p class="lede">История о том, как появился второй мозг Олеси, какая команда его обслуживает и как из этого вырос «Наш этаж» — по порядку, от начала до сегодняшнего дня.</p>
     <div class="route-list">
       <div class="route-item"><span class="route-num" style="--num-color:var(--accent-green)">01</span><div><b>Как начинался второй мозг</b> — <span class="desc">Олеся загрузила контекст об Икигай через Академию.</span></div></div>
       <div class="route-item"><span class="route-num" style="--num-color:var(--accent-green)">02</span><div><b>Команда — 15 характеров</b> — <span class="desc">агенты, созданные, чтобы всё это держать.</span></div></div>
