@@ -72,7 +72,7 @@ body {
   opacity: var(--bop, 0.9);
   pointer-events: none;
 }
-.slide-inner, .ikigai-hero { position: relative; z-index: 1; }
+.slide-inner { position: relative; z-index: 1; }
 
 /* Цветовые роли слайдов — по мотивам четырёх кругов Икигай, разная интенсивность/позиция на каждом (полноцветные, яркость держит --bop) */
 .deck > .slide:nth-of-type(1)  { --bc1:#4ADE80; --bc2:#A78BFA; --bx1:8%; --by1:15%; --bx2:96%; --by2:85%; --bop:0.85; }
@@ -89,7 +89,7 @@ body {
 .deck > .slide:nth-of-type(12) { --bc1:#4ADE80; --bc2:#22D3EE; --bx1:10%; --by1:92%; --bx2:90%; --by2:8%; --bop:0.75; }
 .deck > .slide:nth-of-type(13) { --bc1:#4ADE80; --bc2:#A78BFA; --bx1:50%; --by1:8%; --bx2:50%; --by2:96%; --bop:0.8; }
 
-.slide-inner { max-width: var(--max-w); margin: 0 auto; width: 100%; max-height: 86vh; overflow-y: auto; padding: 4px 2px 24px; }
+.slide-inner { max-width: var(--max-w); margin: 0 auto; width: 100%; max-height: 90vh; overflow-y: auto; padding: 4px 2px 24px; }
 .slide-inner::-webkit-scrollbar { width: 6px; }
 .slide-inner::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
@@ -167,7 +167,7 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 .demo-cta:hover { filter: brightness(1.08); }
 
 /* --- Ikigai hero graphic --- */
-.ikigai-hero { position: absolute; bottom: -18%; right: -18%; width: min(22vw, 260px); height: min(22vw, 260px); opacity: 0.6; pointer-events: none; }
+.ikigai-hero { position: absolute; z-index: 0; bottom: -18%; right: -18%; width: min(22vw, 260px); height: min(22vw, 260px); opacity: 0.6; pointer-events: none; }
 @media (max-width: 1100px) { .ikigai-hero { display: none; } }
 .deck > .slide:nth-of-type(1) .slide-inner { max-width: 62ch; margin-left: 0; margin-right: auto; }
 @media (max-width: 1100px) { .deck > .slide:nth-of-type(1) .slide-inner { max-width: var(--max-w); margin: 0 auto; } }
@@ -233,7 +233,6 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 <div class="deck" id="deck">
 
 <div class="slide" data-crumb="Обложка">
-  <div class="slide-inner">
     <svg class="ikigai-hero" viewBox="0 0 200 200" aria-hidden="true">
       <circle cx="80" cy="80" r="52" fill="none" stroke="#4ADE80" stroke-width="1.4" class="petal p1"/>
       <circle cx="120" cy="80" r="52" fill="none" stroke="#22D3EE" stroke-width="1.4" class="petal p2"/>
@@ -241,7 +240,8 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
       <circle cx="120" cy="120" r="52" fill="none" stroke="#F0B429" stroke-width="1.4" class="petal p4"/>
       <circle cx="100" cy="100" r="3" fill="#E7EAEE" class="core"/>
     </svg>
-    <div class="eyebrow" style="--dot:var(--accent-green)">Для Александра · Подготовлено ТАРС</div>
+  <div class="slide-inner">
+    <div class="eyebrow" style="--dot:var(--accent-green)">Для Александра · Подготовлено "TARS"</div>
     <h1>Второй мозг и «Наш этаж» — что построено</h1>
     <p class="lede">Вы попросили показать, что Олеся построила в своём Втором мозге и какие решения уже применены. Дальше — не сухой список функций, а то, что <em>реально сделано</em>: шаг за шагом, командой, которую она собрала, и инструментом, который выросла делать сама.</p>
     <div style="margin-top:28px; color:var(--fg-faint); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em;">13 слайдов · Второй мозг · Наш этаж · Икигай</div>
@@ -251,7 +251,7 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 <div class="slide" data-crumb="Кто пишет">
   <div class="slide-inner">
     <div class="eyebrow" style="--dot:var(--accent-green)">Кто пишет этот документ</div>
-    <h2>Представлюсь — меня зовут ТАРС</h2>
+    <h2>Представлюсь — меня зовут "TARS"</h2>
     <div class="tars-bubble">
       <div class="tars-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="7" width="16" height="12" rx="3"/><circle cx="9" cy="13" r="1.4" fill="currentColor" stroke="none"/><circle cx="15" cy="13" r="1.4" fill="currentColor" stroke="none"/><path d="M12 7V4M9 4h6"/></svg></div>
       <p>Имя — <span class="hl-green">"TARS"</span>, в честь дроида из фильма «Интерстеллар». Характер похожий: спокойный, надёжный, с сухим чувством юмора — включается ровно настолько, чтобы день не превращался в казарму.</p>
