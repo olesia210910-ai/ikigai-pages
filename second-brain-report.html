@@ -192,8 +192,8 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 .demo-cta:hover { filter: brightness(1.08); }
 
 /* --- Ikigai hero graphic --- */
-.ikigai-hero { position: absolute; z-index: 2; isolation: isolate; bottom: -4%; right: -4%; width: min(38vw, 460px); height: min(38vw, 460px); opacity: 1; pointer-events: none; filter: drop-shadow(0 0 20px rgba(0,0,0,0.6)); }
-@media (max-width: 1100px) { .ikigai-hero { width: min(50vw, 320px); height: min(50vw, 320px); bottom: -8%; right: -8%; } }
+.ikigai-hero { position: absolute; z-index: 2; isolation: isolate; top: 50%; right: 3%; transform: translateY(-50%); width: min(34vw, 420px); height: min(34vw, 420px); opacity: 1; pointer-events: none; filter: drop-shadow(0 0 20px rgba(0,0,0,0.6)); }
+@media (max-width: 1100px) { .ikigai-hero { width: min(50vw, 320px); height: min(50vw, 320px); top: auto; bottom: -8%; right: -8%; transform: none; } }
 .deck > .slide:nth-of-type(1) .slide-inner { max-width: 56ch; margin-left: 0; margin-right: auto; }
 @media (max-width: 1100px) { .deck > .slide:nth-of-type(1) .slide-inner { max-width: 46ch; margin: 0 0 0 0; } }
 .ikigai-hero .petal { stroke-width: 2.6; }
