@@ -207,24 +207,24 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 .demo-cta:hover { filter: brightness(1.08); }
 
 /* --- Ikigai hero graphic --- */
-.ikigai-hero { position: absolute; z-index: 2; isolation: isolate; top: 50%; right: 3%; transform: translateY(-50%); width: min(34vw, 420px); height: min(34vw, 420px); opacity: 1; pointer-events: none; filter: drop-shadow(0 0 20px rgba(0,0,0,0.6)); }
-@media (max-width: 1100px) { .ikigai-hero { width: min(50vw, 320px); height: min(50vw, 320px); top: auto; bottom: -8%; right: -8%; transform: none; } }
-.deck > .slide:nth-of-type(1) .slide-inner { max-width: 56ch; margin-left: 0; margin-right: auto; }
-@media (max-width: 1100px) { .deck > .slide:nth-of-type(1) .slide-inner { max-width: 46ch; margin: 0 0 0 0; } }
-.ikigai-hero .petal { stroke-width: 2.6; }
-.ikigai-hero .p1 { animation: pulse-p1 9s ease-in-out infinite; }
-.ikigai-hero .p2 { animation: pulse-p2 9s ease-in-out infinite; }
-.ikigai-hero .p3 { animation: pulse-p3 9s ease-in-out infinite; }
-.ikigai-hero .p4 { animation: pulse-p4 9s ease-in-out infinite; }
-.ikigai-hero .core { animation: core-glow 9s ease-in-out infinite; }
+.ikigai-hero { position: absolute; z-index: 2; isolation: isolate; top: 50%; right: 6%; transform: translateY(-50%); width: min(44vw, 580px); height: min(44vw, 580px); opacity: 1; pointer-events: none; filter: drop-shadow(0 0 24px rgba(0,0,0,0.6)); }
+@media (max-width: 1100px) { .ikigai-hero { width: min(60vw, 360px); height: min(60vw, 360px); top: auto; bottom: -10%; right: -10%; transform: none; } }
+.deck > .slide:nth-of-type(1) .slide-inner { max-width: 900px; margin-left: 0; margin-right: auto; }
+@media (max-width: 1100px) { .deck > .slide:nth-of-type(1) .slide-inner { max-width: 90vw; margin: 0; } }
+.ikigai-hero .petal { stroke-width: 3; transform-box: fill-box; transform-origin: center; }
+.ikigai-hero .p1 { animation: conv-p1 10s ease-in-out infinite; }
+.ikigai-hero .p2 { animation: conv-p2 10s ease-in-out infinite; }
+.ikigai-hero .p3 { animation: conv-p3 10s ease-in-out infinite; }
+.ikigai-hero .p4 { animation: conv-p4 10s ease-in-out infinite; }
+.ikigai-hero .core { animation: core-glow 10s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
 @media (prefers-reduced-motion: reduce) {
   .ikigai-hero .p1, .ikigai-hero .p2, .ikigai-hero .p3, .ikigai-hero .p4, .ikigai-hero .core { animation: none; }
 }
-@keyframes pulse-p1 { 0%,100% { transform: translate(0,0) scale(1); filter: brightness(1); } 50% { transform: translate(9px,9px) scale(1.18); filter: brightness(1.4); } }
-@keyframes pulse-p2 { 0%,100% { transform: translate(0,0) scale(1); filter: brightness(1); } 50% { transform: translate(-9px,9px) scale(1.18); filter: brightness(1.4); } }
-@keyframes pulse-p3 { 0%,100% { transform: translate(0,0) scale(1); filter: brightness(1); } 50% { transform: translate(9px,-9px) scale(1.18); filter: brightness(1.4); } }
-@keyframes pulse-p4 { 0%,100% { transform: translate(0,0) scale(1); filter: brightness(1); } 50% { transform: translate(-9px,-9px) scale(1.18); filter: brightness(1.4); } }
-@keyframes core-glow { 0%,100% { opacity: 0.5; r: 3; } 50% { opacity: 1; r: 7; } }
+@keyframes conv-p1 { 0%,100% { transform: translate(0,0) scale(1); filter: brightness(1); } 50% { transform: translate(60px,60px) scale(1.15); filter: brightness(1.5); } }
+@keyframes conv-p2 { 0%,100% { transform: translate(0,0) scale(1); filter: brightness(1); } 50% { transform: translate(-60px,60px) scale(1.15); filter: brightness(1.5); } }
+@keyframes conv-p3 { 0%,100% { transform: translate(0,0) scale(1); filter: brightness(1); } 50% { transform: translate(60px,-60px) scale(1.15); filter: brightness(1.5); } }
+@keyframes conv-p4 { 0%,100% { transform: translate(0,0) scale(1); filter: brightness(1); } 50% { transform: translate(-60px,-60px) scale(1.15); filter: brightness(1.5); } }
+@keyframes core-glow { 0%,100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 1; transform: scale(2.4); } }
 
 /* --- Nav bar --- */
 .nav-bar {
@@ -274,10 +274,10 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 
 <div class="slide" data-crumb="Обложка">
     <svg class="ikigai-hero" viewBox="0 0 200 200" aria-hidden="true">
-      <circle cx="80" cy="80" r="52" fill="none" stroke="#4ADE80" stroke-width="1.4" class="petal p1"/>
-      <circle cx="120" cy="80" r="52" fill="none" stroke="#22D3EE" stroke-width="1.4" class="petal p2"/>
-      <circle cx="80" cy="120" r="52" fill="none" stroke="#A78BFA" stroke-width="1.4" class="petal p3"/>
-      <circle cx="120" cy="120" r="52" fill="none" stroke="#F0B429" stroke-width="1.4" class="petal p4"/>
+      <circle cx="40" cy="40" r="65" fill="none" stroke="#4ADE80" stroke-width="1.4" class="petal p1"/>
+      <circle cx="160" cy="40" r="65" fill="none" stroke="#22D3EE" stroke-width="1.4" class="petal p2"/>
+      <circle cx="40" cy="160" r="65" fill="none" stroke="#A78BFA" stroke-width="1.4" class="petal p3"/>
+      <circle cx="160" cy="160" r="65" fill="none" stroke="#F0B429" stroke-width="1.4" class="petal p4"/>
       <circle cx="100" cy="100" r="3" fill="#E7EAEE" class="core"/>
     </svg>
   <div class="slide-inner">
