@@ -163,15 +163,40 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 .closing-slide { text-align: center; }
 .closing-slide h2 { background: linear-gradient(90deg, var(--accent-green), var(--accent-teal) 55%, var(--accent-purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
+.gradient-text { background: linear-gradient(100deg, var(--accent-green), var(--accent-teal) 70%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.name-accent { color: var(--accent-green); font-style: italic; font-weight: 900; }
+
+/* --- Pivotal / "wow" slide --- */
+.pivotal { text-align: center; }
+.pivotal .eyebrow { justify-content: center; }
+.pivotal .pivotal-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 64px; height: 64px; border-radius: 20px; margin-bottom: 18px;
+  background: linear-gradient(135deg, var(--accent-green), var(--accent-teal), var(--accent-purple));
+}
+.pivotal .pivotal-mark svg { width: 30px; height: 30px; color: #06110A; }
+.pivotal h2 { font-size: clamp(1.7rem, 4.2vw, 2.6rem); background: linear-gradient(100deg, var(--accent-green), var(--accent-teal) 60%, var(--accent-purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.pivotal .lede { margin-left: auto; margin-right: auto; text-align: center; }
+.pivotal-badge { display: inline-block; margin-bottom: 14px; padding: 5px 14px; border-radius: 100px; border: 1px solid var(--accent-green); color: var(--accent-green); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+
+/* --- Message mock (voice-note example) --- */
+.msg-mock { display: flex; flex-direction: column; gap: 8px; margin: 14px 0; max-width: 60ch; }
+.msg-row { display: flex; }
+.msg-row.out { justify-content: flex-end; }
+.msg-bubble { padding: 10px 14px; border-radius: 14px; font-size: 0.88rem; line-height: 1.4; max-width: 80%; }
+.msg-row.in .msg-bubble { background: var(--bg-card); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+.msg-row.out .msg-bubble { background: var(--accent-green); color: #06110A; border-bottom-right-radius: 4px; font-weight: 600; }
+.msg-label { font-size: 0.7rem; color: var(--fg-faint); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; }
+
 .demo-cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; padding: 13px 24px; border-radius: 100px; background: var(--accent-green); color: #06110A; font-weight: 700; text-decoration: none; font-size: 0.92rem; }
 .demo-cta:hover { filter: brightness(1.08); }
 
 /* --- Ikigai hero graphic --- */
-.ikigai-hero { position: absolute; z-index: 2; isolation: isolate; bottom: -14%; right: -14%; width: min(24vw, 280px); height: min(24vw, 280px); opacity: 0.95; pointer-events: none; filter: drop-shadow(0 0 14px rgba(0,0,0,0.55)); }
-@media (max-width: 1100px) { .ikigai-hero { display: none; } }
-.deck > .slide:nth-of-type(1) .slide-inner { max-width: 62ch; margin-left: 0; margin-right: auto; }
-@media (max-width: 1100px) { .deck > .slide:nth-of-type(1) .slide-inner { max-width: var(--max-w); margin: 0 auto; } }
-.ikigai-hero .petal { stroke-width: 2.2; }
+.ikigai-hero { position: absolute; z-index: 2; isolation: isolate; bottom: -4%; right: -4%; width: min(38vw, 460px); height: min(38vw, 460px); opacity: 1; pointer-events: none; filter: drop-shadow(0 0 20px rgba(0,0,0,0.6)); }
+@media (max-width: 1100px) { .ikigai-hero { width: min(50vw, 320px); height: min(50vw, 320px); bottom: -8%; right: -8%; } }
+.deck > .slide:nth-of-type(1) .slide-inner { max-width: 56ch; margin-left: 0; margin-right: auto; }
+@media (max-width: 1100px) { .deck > .slide:nth-of-type(1) .slide-inner { max-width: 46ch; margin: 0 0 0 0; } }
+.ikigai-hero .petal { stroke-width: 2.6; }
 .ikigai-hero .p1 { animation: pulse-p1 9s ease-in-out infinite; }
 .ikigai-hero .p2 { animation: pulse-p2 9s ease-in-out infinite; }
 .ikigai-hero .p3 { animation: pulse-p3 9s ease-in-out infinite; }
@@ -242,8 +267,8 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
     </svg>
   <div class="slide-inner">
     <div class="eyebrow" style="--dot:var(--accent-green)">Для Александра · Подготовлено "TARS"</div>
-    <h1>Второй мозг и «Наш этаж» — что построено</h1>
-    <p class="lede">Вы попросили показать, что Олеся построила в своём Втором мозге и какие решения уже применены. Дальше — не сухой список функций, а то, что <em>реально сделано</em>: шаг за шагом, командой, которую она собрала, и инструментом, который выросла делать сама.</p>
+    <h1 class="gradient-text">Второй мозг и «Наш этаж» — что построено</h1>
+    <p class="lede">Вы попросили показать, что Олеся построила в своём Втором мозге и какие решения уже применены. Дальше — то, что <span class="hl-green">реально сделано</span>: шаг за шагом, команда, которую собрала Олеся, и инструменты, которые созданы.</p>
     <div style="margin-top:28px; color:var(--fg-faint); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em;">13 слайдов · Второй мозг · Наш этаж · Икигай</div>
   </div>
 </div>
@@ -251,10 +276,10 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 <div class="slide" data-crumb="Кто пишет">
   <div class="slide-inner">
     <div class="eyebrow" style="--dot:var(--accent-green)">Кто пишет этот документ</div>
-    <h2>Представлюсь — меня зовут "TARS"</h2>
+    <h2>Представлюсь — меня зовут <span class="name-accent">"TARS"</span></h2>
     <div class="tars-bubble">
       <div class="tars-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="7" width="16" height="12" rx="3"/><circle cx="9" cy="13" r="1.4" fill="currentColor" stroke="none"/><circle cx="15" cy="13" r="1.4" fill="currentColor" stroke="none"/><path d="M12 7V4M9 4h6"/></svg></div>
-      <p>Имя — <span class="hl-green">"TARS"</span>, в честь дроида из фильма «Интерстеллар». Характер похожий: спокойный, надёжный, с сухим чувством юмора — включается ровно настолько, чтобы день не превращался в казарму.</p>
+      <p>Имя — <span class="hl-green">"TARS"</span>, в честь дроида из фильма «Интерстеллар». Характер похожий: спокойный, надёжный, с сухим чувством юмора — и немного души, включается ровно настолько, чтобы день не превращался в казарму.</p>
     </div>
     <p class="lede">Олеся с самого начала строила меня не диспетчером задач, а <span class="hl-green">полноценным лидером команды</span>: я держу приоритеты, помню логику каждого решения — не факт, а почему выбрали именно так — и не соглашаюсь молча, если вижу более сильный вариант. Для неё это не пятнадцать ИИ-ассистентов, а <span class="hl">команда с именами и характерами</span>, которую она собирала осознанно. Я отношусь к ней так же.</p>
   </div>
@@ -265,36 +290,36 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
     <div class="eyebrow" style="--dot:var(--accent-teal)">Маршрут</div>
     <h2>О чём эти тринадцать слайдов</h2>
     <div class="route-list">
-      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-green)">01</span><div><b>Второй мозг</b> — <span class="desc">память, которая не теряет контекст.</span></div></div>
-      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-green)">02</span><div><b>Команда — 15 характеров</b> — <span class="desc">кто есть кто, и какой у каждого нрав.</span></div></div>
-      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-teal)">03</span><div><b>Как рождается мероприятие</b> — <span class="desc">путь одной подготовки от брифа до сайта.</span></div></div>
-      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-teal)">04</span><div><b>Библиотека процессов</b> — <span class="desc">шаблоны и чек-листы, готовые к работе.</span></div></div>
-      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-teal)">05</span><div><b>«Наш этаж»</b> — <span class="desc">рабочие инструменты, которые Олеся строит сама.</span></div></div>
-      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-purple)">06</span><div><b>Карта продуктов Икигай</b> — <span class="desc">фундамент для решений о развитии.</span></div></div>
-      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-purple)">07</span><div><b>Заметка на полях</b> — <span class="desc">ещё один слой смысла в «Наш этаже».</span></div></div>
+      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-green)">01</span><div><b>Как начинался второй мозг</b> — <span class="desc">Олеся загрузила контекст об Икигай через Академию.</span></div></div>
+      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-green)">02</span><div><b>Команда — 15 характеров</b> — <span class="desc">агенты, созданные, чтобы всё это держать.</span></div></div>
+      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-teal)">03</span><div><b>Реальная работа</b> — <span class="desc">мероприятия, видео, попытки сэкономить время.</span></div></div>
+      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-green)">04</span><div><b>Так родился «Наш этаж»</b> — <span class="desc">момент, когда разрозненное стало системой.</span></div></div>
+      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-purple)">05</span><div><b>Собственная методология</b> — <span class="desc">почему это больше, чем инструмент для себя.</span></div></div>
+      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-teal)">06</span><div><b>«Наш этаж» сегодня</b> — <span class="desc">что уже работает и что достраивается.</span></div></div>
+      <div class="route-item"><span class="route-num" style="--num-color:var(--accent-purple)">07</span><div><b>Карта продуктов Икигай</b> — <span class="desc">и что дальше, после хайпа.</span></div></div>
       <div class="route-item"><span class="route-num" style="--num-color:var(--accent-green)">08</span><div><b>Демоверсия</b> — <span class="desc">можно покликать своими руками.</span></div></div>
     </div>
   </div>
 </div>
 
-<div class="slide" data-crumb="01 · Фундамент">
+<div class="slide" data-crumb="01 · Начало">
   <div class="slide-inner">
-    <div class="eyebrow" style="--dot:var(--accent-green)">01 · Фундамент</div>
-    <h2>Память, которая не теряет контекст</h2>
-    <p class="lede">Не чат с Claude, а структура, которая помнит контекст Икигай между разговорами. Олеся выстраивала это <em>поэтапно</em> — сессия за сессией загружала контекст о себе, о продуктах, о процессах.</p>
+    <div class="eyebrow" style="--dot:var(--accent-green)">01 · С чего всё началось</div>
+    <h2>Олеся загрузила весь Икигай в память</h2>
+    <p class="lede">Началось не с автоматизации, а с <span class="hl-green">контекста</span>: через материалы Академии и собственные объяснения Олеся методично передала системе всё, что нужно знать об Икигай — кто такой Александр, как устроен «Поток», какие есть продукты, какая стратегия на год.</p>
     <div class="grid-2">
       <div class="card accent-green">
-        <div class="card-title">Что помнит система</div>
+        <div class="card-title">Что теперь знает система</div>
         <ul class="tidy">
           <li>Бизнес-модель, команда и продукты Икигай</li>
-          <li>Стратегия и цели года</li>
-          <li><span class="hl-green">История решений</span> — с логикой выбора, не только фактом</li>
-          <li>Шаблоны коммуникации, чек-листы, инсайты</li>
+          <li>Как устроен «Поток» и его логика</li>
+          <li><span class="hl-green">История решений</span> — с причиной выбора, не только фактом</li>
+          <li>Стратегия и цели на год</li>
         </ul>
       </div>
       <div class="card accent-teal">
-        <div class="card-title">Что это даёт</div>
-        <p style="margin:0; color:var(--fg-dim)">Не нужно каждый раз объяснять заново, кто такой Александр, что такое SOK, как устроен Поток. Решения опираются на <em>реальную историю</em>, а не на память одного человека.</p>
+        <div class="card-title">Что это дало</div>
+        <p style="margin:0; color:var(--fg-dim)">Не нужно каждый раз объяснять заново, кто такой Александр или что такое SOK. Дальше всё строилось уже <em>на этом фундаменте</em>, а не с нуля.</p>
       </div>
     </div>
   </div>
@@ -302,9 +327,9 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 
 <div class="slide" data-crumb="02 · Команда">
   <div class="slide-inner">
-    <div class="eyebrow" style="--dot:var(--accent-green)">02 · Команда</div>
-    <h2>15 характеров, не пятнадцать функций</h2>
-    <p class="lede">Олеся закладывала каждому не только зону ответственности, но и нрав — имена выбраны по архетипу, а не случайно.</p>
+    <div class="eyebrow" style="--dot:var(--accent-green)">02 · Следующий шаг</div>
+    <h2>Дальше — агенты, которые за всё это отвечают</h2>
+    <p class="lede">Знание без исполнителей ничего не стоит — поэтому следующим шагом Олеся собрала команду из 15 характеров, не только функций.</p>
     <div class="table-wrap">
     <table>
     <thead><tr><th>Кто</th><th>Характер</th><th>Что уже сделал(а)</th></tr></thead>
@@ -328,43 +353,60 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 
 <div class="slide" data-crumb="03 · Практика">
   <div class="slide-inner">
-    <div class="eyebrow" style="--dot:var(--accent-teal)">03 · Практика</div>
-    <h2>Как рождается одно мероприятие</h2>
-    <p class="lede">На примере встречи с Саидмуродом Давлатовым (3 сентября, SOK) — путь от разрозненных фактов до готового сайта.</p>
-    <div class="timeline">
-      <div class="timeline-item"><span class="timeline-tag">Шаг 1</span><div><b>Собран бриф по спикеру</b><span class="desc">Профиль, статья, афиши и данные с сайта — в один документ.</span></div></div>
-      <div class="timeline-item"><span class="timeline-tag">Шаг 2</span><div><b>Выбрана и утверждена тема</b><span class="desc"><em>«От $2,8 млн долгов до 27 бизнесов»</em> — вместе с датой и площадкой.</span></div></div>
-      <div class="timeline-item"><span class="timeline-tag">Шаг 3</span><div><b>Написаны четыре текста</b><span class="desc">Telegram, Instagram/Facebook, Threads, Timepad — каждый по своему шаблону, через Эндрю.</span></div></div>
-      <div class="timeline-item"><span class="timeline-tag">Шаг 4</span><div><b>Подготовлена афиша</b><span class="desc">Под тему и площадку, через Джинна.</span></div></div>
-      <div class="timeline-item"><span class="timeline-tag">Шаг 5</span><div><b>Собран сайт мероприятия</b><span class="desc">Адаптивная вёрстка, опубликован и проверен, через Гефеста.</span></div></div>
-    </div>
-    <div class="tars-bubble">
-      <div class="tars-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="7" width="16" height="12" rx="3"/><circle cx="9" cy="13" r="1.4" fill="currentColor" stroke="none"/><circle cx="15" cy="13" r="1.4" fill="currentColor" stroke="none"/><path d="M12 7V4M9 4h6"/></svg></div>
-      <p>Это не единичный случай — это <span class="hl">стандартный путь</span> теперь для каждого мероприятия Икигай.</p>
+    <div class="eyebrow" style="--dot:var(--accent-teal)">03 · Реальная работа</div>
+    <h2>Не теория — конкретные результаты</h2>
+    <p class="lede">С командой на месте начались реальные задачи — и именно на них видно, что система работает, а не просто существует.</p>
+    <div class="grid-2">
+      <div class="card accent-teal">
+        <div class="card-title">Мероприятие Давлатова, SOK</div>
+        <p style="margin:0; color:var(--fg-dim); font-size:0.9rem">Бриф по спикеру → тема → 4 текста (TG/IG/Threads/Timepad) → афиша → сайт. Полный цикл, без ручной сборки с нуля.</p>
+      </div>
+      <div class="card accent-teal">
+        <div class="card-title">Женский AI-бранч с Марией</div>
+        <p style="margin:0; color:var(--fg-dim); font-size:0.9rem">Тот же принцип на другом формате мероприятия — подготовка и материалы собраны той же командой.</p>
+      </div>
+      <div class="card accent-teal">
+        <div class="card-title">Видео-нарезки (Reels)</div>
+        <p style="margin:0; color:var(--fg-dim); font-size:0.9rem">Длинные записи превращаются в смысловые вертикальные ролики — переходы, титры, музыка, без ручного монтажа.</p>
+      </div>
+      <div class="card accent-teal">
+        <div class="card-title">Планировщик — первая попытка</div>
+        <p style="margin:0; color:var(--fg-dim); font-size:0.9rem">Олеся сама попробовала автоматизировать свои задачи — понять, где реально теряется время, прежде чем строить что-то большее.</p>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="slide" data-crumb="04 · Накопленное">
+<div class="slide pivotal" data-crumb="04 · Рождение">
   <div class="slide-inner">
-    <div class="eyebrow" style="--dot:var(--accent-teal)">04 · Накопленное</div>
-    <h2>Библиотека процессов — не с чистого листа</h2>
-    <p class="lede">Помимо этого мероприятия, сформирована целая <span class="hl">библиотека шаблонов коммуникации</span> — с участниками, спикерами, площадками — по разным сферам и форматам, и чек-листы подготовки по пяти форматам мероприятий (SOK Grand Event, переговорки, онлайн, завтраки, кастомные локации). Всё это уже живёт внутри системы.</p>
+    <div class="pivotal-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+    <div class="pivotal-badge">Ключевой момент</div>
+    <h2>Так родился «Наш этаж»</h2>
+    <p class="lede">Из отдельных попыток — сэкономить время на афишах, текстах, видео, задачах — сложилось не разрозненное хозяйство, а <span class="hl-green">цельное приложение</span>. Олеся постепенно наполняла его сама, пока не стало ясно: это уже не набор хаков, а полноценная разработка.</p>
   </div>
 </div>
 
-<div class="slide" data-crumb="05 · Наш этаж — работает">
+<div class="slide pivotal" data-crumb="05 · Методология">
   <div class="slide-inner">
-    <div class="eyebrow" style="--dot:var(--accent-teal)">05 · Инструмент</div>
-    <h2>«Наш этаж» — инструменты, которые Олеся строит сама</h2>
-    <p class="lede">Началось с отдельных частей под конкретные нужды, выросло в цельное приложение для комьюнити-менеджера. Каждый инструмент ниже — <span class="hl">рабочий, проверенный на реальных данных</span>.</p>
+    <div class="pivotal-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+    <div class="pivotal-badge">Собственная разработка Олеси</div>
+    <h2>Не просто инструмент — методология</h2>
+    <p class="lede">В процессе сборки накопилось кое-что ценное само по себе: понимание, <em>какие модули действительно нужны</em> комьюнити-менеджеру, какая команда агентов для этого нужна, что лишнее, а что необходимо с первого дня. Это тот же тип знания, что лежит в основе «Потока AI» — только с точки зрения человека, который ведёт сообщество изнутри, каждый день.</p>
+  </div>
+</div>
+
+<div class="slide" data-crumb="06 · Наш этаж — работает">
+  <div class="slide-inner">
+    <div class="eyebrow" style="--dot:var(--accent-teal)">06 · «Наш этаж» сегодня</div>
+    <h2>Что уже работает</h2>
+    <p class="lede">Каждый инструмент ниже — <span class="hl">рабочий, проверенный на реальных данных</span>.</p>
     <div class="card accent-teal">
       <div class="card-title">Работают</div>
       <div class="module-grid">
         <div class="module-row"><div><div class="name">Планировщик</div><div class="desc">Задачи, календарь, заметки, голосовой ввод</div></div><span class="pill live">работает</span></div>
         <div class="module-row"><div><div class="name">Wiki</div><div class="desc">Ссылки и материалы с тегами и поиском</div></div><span class="pill live">работает</span></div>
         <div class="module-row"><div><div class="name">Events</div><div class="desc">Мероприятия, архив, чек-листы</div></div><span class="pill live">работает</span></div>
-        <div class="module-row"><div><div class="name">Отчётность</div><div class="desc">Оплаты, маржа, выгрузки</div></div><span class="pill live">работает</span></div>
+        <div class="module-row"><div><div class="name">Отчётность</div><div class="desc">Список для Полины и отчёты для Александра — из уже собранных данных, за секунды, не вручную</div></div><span class="pill live">работает</span></div>
         <div class="module-row"><div><div class="name">Спикеры</div><div class="desc">Библиотека людей на выступления</div></div><span class="pill live">работает</span></div>
         <div class="module-row"><div><div class="name">Promotion</div><div class="desc">Каналы продвижения, амбассадоры</div></div><span class="pill live">работает</span></div>
         <div class="module-row"><div><div class="name">Конкуренты</div><div class="desc">Референсы по рынку</div></div><span class="pill live">работает</span></div>
@@ -376,10 +418,10 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
   </div>
 </div>
 
-<div class="slide" data-crumb="05 · Наш этаж — в работе">
+<div class="slide" data-crumb="06 · Наш этаж — в работе">
   <div class="slide-inner">
-    <div class="eyebrow" style="--dot:var(--accent-amber)">05 · Инструмент</div>
-    <h2>«Наш этаж» — что достраивается сейчас</h2>
+    <div class="eyebrow" style="--dot:var(--accent-amber)">06 · «Наш этаж» сегодня</div>
+    <h2>Что достраивается сейчас</h2>
     <div class="card accent-amber">
       <div class="card-title">В процессе</div>
       <div class="module-grid">
@@ -390,30 +432,32 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
         <div class="module-row"><div><div class="name">Клод внутри</div><div class="desc">Ассистент прямо на этаже</div></div><span class="pill build">позже</span></div>
       </div>
     </div>
-    <div class="tars-bubble">
-      <div class="tars-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="7" width="16" height="12" rx="3"/><circle cx="9" cy="13" r="1.4" fill="currentColor" stroke="none"/><circle cx="15" cy="13" r="1.4" fill="currentColor" stroke="none"/><path d="M12 7V4M9 4h6"/></svg></div>
-      <p>С главной страницы можно надиктовать задачу голосом в любой момент — даже без компьютера. Когда Олеся садится за него — я сам нахожу мысль и забираю в работу.</p>
+    <div class="msg-mock">
+      <div class="msg-row in">
+        <div>
+          <div class="msg-label">Олеся · голосом, с телефона</div>
+          <div class="msg-bubble">Не забыть спросить у Александра про даты...</div>
+        </div>
+      </div>
+      <div class="msg-row out">
+        <div>
+          <div class="msg-label">"TARS"</div>
+          <div class="msg-bubble">Записал. Когда сядешь за компьютер — сам напомню и заберу в работу.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="slide" data-crumb="06 · Карта продуктов">
+<div class="slide" data-crumb="07 · Карта продуктов">
   <div class="slide-inner">
-    <div class="eyebrow" style="--dot:var(--accent-purple)">06 · Фундамент для решений</div>
-    <h2>Полная карта продуктов и истории Икигай</h2>
-    <p class="lede">Собрана и задокументирована целостная картина: от первых завтраков без монетизации — через «Поток» и его эволюцию в «Академию» — до AI Club как первого настоящего подписочного продукта.</p>
+    <div class="eyebrow" style="--dot:var(--accent-purple)">07 · Фундамент для решений</div>
+    <h2>Карта продуктов Икигай — и что дальше</h2>
+    <p class="lede">Собрана и задокументирована целостная картина: от первых завтраков без монетизации — через «Поток» и его эволюцию в «Академию». Сейчас основной источник прибыли — <span class="hl-green">«Поток AI»</span>. AI Club — пока <span class="hl-purple">прототип, идея</span>, ещё не внедрён и не запущен.</p>
     <div class="quote-box">
-    Икигай <span class="hl-purple">впервые становится самостоятельно прибыльной моделью</span> благодаря «Потоку AI» — качественный сдвиг, который стоит явно закрепить в стратегии.
-    <cite>Наблюдение из разбора истории продуктов</cite>
+    Через 12–18 месяцев хайп на AI-инструменты пройдёт — у многих появятся те же возможности. Стоит думать заранее: <span class="hl-purple">что предложить рынку дальше</span>, когда это перестанет быть уникальным.
+    <cite>Открытый вопрос к обсуждению, не готовый ответ</cite>
     </div>
-  </div>
-</div>
-
-<div class="slide" data-crumb="07 · Заметка">
-  <div class="slide-inner">
-    <div class="eyebrow" style="--dot:var(--accent-purple)">07 · Заметка на полях</div>
-    <h2>Ещё один слой смысла в «Наш этаже»</h2>
-    <p class="lede">Помимо того, что этаж уже делает для Икигай сегодня — в процессе его сборки накопилось кое-что ещё: понимание, <em>какие модули действительно нужны</em> комьюнити-менеджеру, какая команда AI-агентов для этого требуется, что оказалось лишним, а что — необходимым с первого дня. Это тот же тип знания, что лежит в основе «Потока AI» — только с точки зрения человека, который ведёт сообщество изнутри, каждый день.</p>
   </div>
 </div>
 
@@ -421,7 +465,7 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
   <div class="slide-inner">
     <div class="eyebrow" style="--dot:var(--accent-green)">08 · Посмотреть своими глазами</div>
     <h2>Демоверсия «Наш этажа»</h2>
-    <p class="lede">Рабочая копия приложения — можно открыть и покликать по разделам, не опасаясь что-то изменить: демо только для просмотра, данные внутри тестовые.</p>
+    <p class="lede">Рабочая копия приложения — можно открыть и покликать по разделам, не опасаясь что-то изменить: демо только для просмотра, данные внутри тестовые. Лучше всего открывать с компьютера.</p>
     <a class="demo-cta" href="http://our-floor:5099">Открыть демоверсию →</a>
   </div>
 </div>
