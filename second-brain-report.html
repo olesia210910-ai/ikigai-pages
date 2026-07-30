@@ -164,6 +164,9 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
 .closing-slide h2 { background: linear-gradient(90deg, var(--accent-green), var(--accent-teal) 55%, var(--accent-purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 .gradient-text { background: linear-gradient(100deg, var(--accent-green), var(--accent-teal) 70%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cover-title { display: flex; flex-direction: column; gap: 4px; margin: 0 0 20px; }
+.cover-title-small { font-size: clamp(1.3rem, 3vw, 2rem); font-style: normal; }
+.cover-title-big { font-size: clamp(2rem, 5vw, 3.4rem); font-style: italic; }
 .name-accent { color: var(--accent-green); font-style: italic; font-weight: 900; }
 
 /* --- Pivotal / "wow" slide --- */
@@ -267,8 +270,9 @@ th { color: var(--fg-dim); font-weight: 600; font-size: 0.74rem; text-transform:
     </svg>
   <div class="slide-inner">
     <div class="eyebrow" style="--dot:var(--accent-green)">Для Александра · Подготовлено "TARS"</div>
-    <h1 class="gradient-text">Второй мозг и «Наш этаж» — что построено</h1>
-    <p class="lede">Вы попросили показать, что Олеся построила в своём Втором мозге и какие решения уже применены. Дальше — то, что <span class="hl-green">реально сделано</span>: шаг за шагом, команда, которую собрала Олеся, и инструменты, которые созданы.</p>
+    <h1 class="cover-title"><span class="cover-title-small gradient-text">"Второй мозг" и «Наш этаж»</span><span class="cover-title-big gradient-text">— что построено?</span></h1>
+    <p class="lede">Вы попросили показать, что Олеся построила в своём Втором мозге и какие решения уже применены.</p>
+    <p class="lede">Дальше — то, что <span class="hl-green">реально сделано</span>: шаг за шагом, команда, которую собрала Олеся, и инструменты, которые созданы.</p>
     <div style="margin-top:28px; color:var(--fg-faint); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em;">13 слайдов · Второй мозг · Наш этаж · Икигай</div>
   </div>
 </div>
